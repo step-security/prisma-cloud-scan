@@ -1,19 +1,19 @@
 {
   "name": "prisma-cloud-scan",
   "description": "Scan with Prisma Cloud",
-  "author": "Palo Alto Networks",
+  "author": "step-security",
   "license": "Apache-2.0",
   "scripts": {
     "lint": "eslint index.js",
     "build": "ncc build index.js --license licenses.txt"
   },
-  "homepage": "https://github.com/paloaltonetworks/prisma-cloud-scan#readme",
+  "homepage": "https://github.com/step-security/prisma-cloud-scan#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/paloaltonetworks/prisma-cloud-scan.git"
+    "url": "git+https://github.com/step-security/prisma-cloud-scan.git"
   },
   "bugs": {
-    "url": "https://github.com/paloaltonetworks/prisma-cloud-scan/issues"
+    "url": "https://github.com/step-security/prisma-cloud-scan/issues"
   },
   "keywords": [
     "prisma",
