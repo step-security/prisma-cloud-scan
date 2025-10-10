@@ -1,0 +1,41 @@
+{
+  "name": "prisma-cloud-scan",
+  "description": "Scan with Prisma Cloud",
+  "author": "step-security",
+  "license": "Apache-2.0",
+  "scripts": {
+    "lint": "eslint index.js",
+    "build": "ncc build index.js --license licenses.txt"
+  },
+  "homepage": "https://github.com/step-security/prisma-cloud-scan#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/step-security/prisma-cloud-scan.git"
+  },
+  "bugs": {
+    "url": "https://github.com/step-security/prisma-cloud-scan/issues"
+  },
+  "keywords": [
+    "prisma",
+    "cloud",
+    "compute",
+    "twistlock",
+    "docker",
+    "container",
+    "image",
+    "vulnerability",
+    "compliance",
+    "scan"
+  ],
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@actions/exec": "^1.1.1",
+    "@actions/tool-cache": "^2.0.1",
+    "axios": "^1.1.3",
+    "https-proxy-agent": "^7.0.5"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.34.0",
+    "eslint": "^8.26.0"
+  }
+}
