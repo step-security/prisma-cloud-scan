@@ -4,7 +4,6 @@ const core = require('@actions/core');
 const { exec } = require('@actions/exec');
 const tc = require('@actions/tool-cache');
 const os = require('os');
-const { HttpsProxyAgent } = require('https-proxy-agent');
 
 const TRUE_VALUES = ['true', 'yes', 'y', '1'];
 
@@ -20,7 +19,7 @@ function joinUrlPath(...parts) {
 }
 
 // Wrapper around 'authenticate' Console API endpoint
-async function authenticate(url, user, pass, httpProxy) {
+async function authenticate(url, user, pass) {
   let parsedUrl;
   try {
     parsedUrl = new URL(url);
@@ -38,8 +37,6 @@ async function authenticate(url, user, pass, httpProxy) {
       headers: {
         'Content-Type': 'application/json',
       },
-      proxy: false,
-      httpsAgent: new HttpsProxyAgent(httpProxy),
       data: {
         username: user,
         password: pass,
@@ -53,7 +50,7 @@ async function authenticate(url, user, pass, httpProxy) {
 }
 
 // Wrapper around 'version' Console API endpoint
-async function getVersion(url, token, httpProxy) {
+async function getVersion(url, token) {
   let parsedUrl;
   try {
     parsedUrl = new URL(url);
@@ -71,8 +68,6 @@ async function getVersion(url, token, httpProxy) {
       headers: {
         'Authorization': `Bearer ${token}`,
       },
-      proxy: false,
-      httpsAgent: new HttpsProxyAgent(httpProxy)
     });
     return res.data;
   } catch (err) {
