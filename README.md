@@ -1,3 +1,5 @@
+[![StepSecurity Maintained Action](https://raw.githubusercontent.com/step-security/maintained-actions-assets/main/assets/maintained-action-banner.png)](https://docs.stepsecurity.io/actions/stepsecurity-maintained-actions)
+
 # Prisma Cloud Scan Action
 
 This GitHub Action will scan container images for vulnerabilities and compliance issues using Prisma Cloud. With it, you can receive immediate feedback about image vulnerabilities and compliance violations both in GitHub and in the Prisma Cloud Console as well as block builds that do not meet your compliance requirements, such as high or critical vulnerabilities.
