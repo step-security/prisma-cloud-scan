@@ -37,7 +37,7 @@ jobs:
 
       # (Optional) for compatibility with GitHub's code scanning alerts
       - name: Upload SARIF file
-        if: ${{ always() }} # necessary if using failure thresholds in the image scan
+        if: ${{ !cancelled() }} # necessary if using failure thresholds in the image scan
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: ${{ steps.scan.outputs.sarif_file }}
@@ -67,6 +67,7 @@ jobs:
 | `docker_tlskey` | Path to the Docker client private key | No |  |
 | `twistcli_debug` | Activate the debug flag for prisma cli (by default deactivated) | No |  |
 | `twistcli_publish` | Publish the results to Prisma Cloud. Default is true. | No |  |
+| `tarball` | Path to the image tarball to scan instead of a live Docker image | No |  |
 
 ### Outputs
 | Output | Description |
@@ -90,4 +91,3 @@ The table of discovered vulnerabilities and compliance violations shows up in th
 
 ### GitHub code scanning alerts
 <img src="./images/pc_github_code_scanning.png">
-
