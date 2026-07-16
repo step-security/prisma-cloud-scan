@@ -272,6 +272,7 @@ function formatSarif(twistcliVersion, resultsFile) {
   }
 }
 
+
 async function validateSubscription() {
   let repoPrivate;
   const eventPath = process.env.GITHUB_EVENT_PATH;
@@ -286,11 +287,11 @@ async function validateSubscription() {
     "https://docs.stepsecurity.io/actions/stepsecurity-maintained-actions";
 
   core.info("");
-  core.info("[1;36mStepSecurity Maintained Action[0m");
+  core.info("StepSecurity Maintained Action");
   core.info(`Secure drop-in replacement for ${upstream}`);
   if (repoPrivate === false)
-    core.info("[32m✓ Free for public repositories[0m");
-  core.info(`[36mLearn more:[0m ${docsUrl}`);
+    core.info("✓ Free for public repositories");
+  core.info(`Learn more: ${docsUrl}`);
   core.info("");
 
   if (repoPrivate === false) return;
@@ -307,10 +308,10 @@ async function validateSubscription() {
   } catch (error) {
     if (axios.isAxiosError(error) && error.response?.status === 403) {
       core.error(
-        `[1;31mThis action requires a StepSecurity subscription for private repositories.[0m`,
+        `This action requires a StepSecurity subscription for private repositories.`,
       );
       core.error(
-        `[31mLearn how to enable a subscription: ${docsUrl}[0m`,
+        `Learn how to enable a subscription: ${docsUrl}`,
       );
       process.exit(1);
     }

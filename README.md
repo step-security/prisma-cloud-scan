@@ -21,7 +21,7 @@ jobs:
 
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Build the image
         run: docker build -t $IMAGE_NAME .
@@ -38,7 +38,7 @@ jobs:
       # (Optional) for compatibility with GitHub's code scanning alerts
       - name: Upload SARIF file
         if: ${{ !cancelled() }} # necessary if using failure thresholds in the image scan
-        uses: github/codeql-action/upload-sarif@v3
+        uses: github/codeql-action/upload-sarif@v4
         with:
           sarif_file: ${{ steps.scan.outputs.sarif_file }}
 ```
@@ -91,3 +91,4 @@ The table of discovered vulnerabilities and compliance violations shows up in th
 
 ### GitHub code scanning alerts
 <img src="./images/pc_github_code_scanning.png">
+
