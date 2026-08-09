@@ -1,0 +1,18 @@
+{
+   "schema_version": "1",
+   "onboarding_type": "copied",
+   "archived": false,
+   "maintained_action_name": "step-security/prisma-cloud-scan",
+   "upstream_full_repo_name": "paloaltonetworks/prisma-cloud-scan",
+   "action_type": "node",
+   "last_release": {
+     "tag_name": "v1.6.7",
+     "created_at": "2025-10-15T05:23:27Z",
+     "published_at": "2025-10-15T05:26:20Z"
+   },
+   "sync": {
+     "ignore_presets": [
+       "defaults_v1"
+     ]
+   }
+ }
